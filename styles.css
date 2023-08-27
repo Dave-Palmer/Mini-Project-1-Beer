@@ -1,0 +1,330 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.test-class {
+    color: pink;
+}
+
+.navbar-brand-color {
+    color: #0087ca;
+}
+
+.image-background {
+    background: url(/Images/hops4.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    position: relative;
+
+}
+
+.image-background:before {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+h3 {
+    font-size: 20vw;
+    text-align: center;
+    /* font-family: 'nunito', cursive; */
+
+
+}
+
+#letter-one-b {
+    visibility: hidden;
+}
+
+.letter-one-b-animation {
+    animation-name: letter-show, letter-move;
+    animation-duration: 1s;
+    animation-delay: 1s, 7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+#letter-two-e {
+    visibility: hidden;
+}
+
+.letter-two-e-animation {
+    animation-name: letter-show, letter-move;
+    animation-duration: 1s;
+    animation-delay: 2s, 7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+#letter-three-e {
+    visibility: hidden;
+}
+
+.letter-three-e-animation {
+    animation-name: letter-show, letter-move;
+    animation-duration: 1s;
+    animation-delay: 3s, 7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+#letter-four-r {
+    visibility: hidden;
+}
+
+.letter-four-r-animation {
+    animation-name: letter-show, letter-move;
+    animation-duration: 1s;
+    animation-delay: 4s, 7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.cheers {
+    display: flex;
+    justify-content: center;
+}
+
+#beer-icon-one {
+    visibility: hidden;
+    position: relative;
+    bottom: 5px;
+    width: 4em;
+    transform: scaleX(-1);
+    translate: -2vw;
+
+}
+
+.beer-icon-one-animation {
+    animation: beer-one 1s 7s infinite;
+    animation-timing-function: ease-in;
+    animation-direction: alternate;
+}
+
+#beer-icon-two {
+    visibility: hidden;
+    position: relative;
+    bottom: 5px;
+    width: 4em;
+    translate: 2vw;
+}
+
+.beer-icon-two-animation {
+    animation: beer-two 1s 7s infinite;
+    animation-timing-function: ease-in;
+    animation-direction: alternate;
+}
+
+@keyframes letter-show {
+    10% {
+        visibility: visible;
+    }
+
+    50% {
+        font-size: 25vw;
+    }
+
+    100% {
+        visibility: visible;
+        font-size: 20vw;
+    }
+}
+
+@keyframes letter-move {
+    100% {
+        color: white;
+        text-shadow: 2px 2px 4px #000000;
+        /* text-shadow: 0px 7px 8px #ffeca0; */
+        transform: translatey(-7px);
+    }
+}
+
+@keyframes beer-one {
+    0% {
+        visibility: visible;
+    }
+
+    100% {
+        translate: 0.25rem;
+        rotate: 7deg;
+    }
+}
+
+@keyframes beer-two {
+    0% {
+        visibility: visible;
+    }
+
+    100% {
+        translate: -0.25rem;
+        rotate: -7deg;
+    }
+}
+
+#navbarNav {
+    justify-content: right;
+}
+
+.nav-item {
+    margin-left: 30px;
+    margin-right: 30px;
+    font-family: 'Caveat', cursive;
+    font-size: 1.7em;
+}
+
+.display-image {
+    background-image: url(/Images/melissa-askew-y4xZxzN754M-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+
+.col-lg-4 {
+    display: flex;
+    justify-content: center;
+}
+
+.white-space {
+    background-color: white;
+    width: 100vw;
+    height: 40vh;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+}
+
+.hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.nav-background-color {
+    background-color: rgb(0, 0, 0);
+    transition: 1s;
+}
+
+.card-text {
+    font-family: 'Caveat', cursive;
+    font-size: 1.5em;
+}
+
+.article-area {
+    display: flex;
+    background-color: #0087ca;
+    height: 80vh;
+}
+
+h2 span img {
+    width: 2em;
+}
+
+.about-list {
+    flex-basis: 100%;
+    background-color: white;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    flex-direction: column;
+}
+
+h2,
+h4 {
+    margin-top: 1em;
+    font-size: 3em;
+    font-family: 'Caveat', cursive;
+    ;
+}
+
+.list-group {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.list-group-item {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+}
+
+#beer-mug-span {
+    padding-right: 30px;
+}
+
+.btn {
+    margin: 1em;
+    font-size: 40px;
+}
+
+.about-list h4 {
+    margin: 0.5em;
+}
+
+.text-box {
+    /* width: 18rem; */
+    margin: 4rem 0.5rem 0.5rem 0.5rem;
+    font-family: 'Caveat', cursive;
+    font-size: 3em;
+}
+
+.card-title {
+    font-size: 2em;
+}
+
+/* #recipes-header {
+    height: 30vh;
+    background: url(/Images/Malt.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
+
+#recipes-body {
+    background: url(/Images/Malt.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+@media (max-width: 982px) {
+    .article-area {
+        flex-direction: column;
+    }
+}
