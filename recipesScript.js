@@ -1,35 +1,37 @@
-
-window.onscroll = () => scrollBarNav()
+window.onscroll = () => scrollBarNav();
 
 const scrollBarNav = () => {
-    const navBar = document.querySelector('#mynav')
-    const navBarBrand = document.querySelector('.navbar-brand')
-    if (document.documentElement.scrollTop > 100) {
-        navBar.classList.add('nav-background-color');
-        navBarBrand.classList.add('navbar-brand-color')
-    } else {
-        navBar.classList.remove('nav-background-color');
-        navBarBrand.classList.remove('navbar-brand-color')
-    }
+  const navBar = document.querySelector("#mynav");
+  const navBarBrand = document.querySelector(".navbar-brand");
+  if (document.documentElement.scrollTop > 100) {
+    navBar.classList.add("nav-background-color");
+    navBarBrand.classList.add("navbar-brand-color");
+  } else {
+    navBar.classList.remove("nav-background-color");
+    navBarBrand.classList.remove("navbar-brand-color");
+  }
+};
 
+function createBreweryCards(breweries) {
+  for (let brewery of breweries) {
+    const template = document
+      .getElementById("card-template")
+      .content.cloneNode(true);
+    template.querySelector(".card-title").innerText = brewery.name;
+    template.querySelector(".brewery-type").innerText = brewery.brewery_type;
+    template.querySelector(".card-text-address").innerText = brewery.address_1;
+    template.querySelector(".card-text-city").innerText = brewery.city;
+    template.querySelector(".card-text-website").href = brewery.website_url;
+    template.querySelector(".card-text-website").innerText =
+      brewery.website_url;
+    document.querySelector("#brewery-list").appendChild(template);
+  }
 }
 
-function addObject(obj) {
-    for (let ob of obj) {
-        const template = document.getElementById("card-template").content.cloneNode(true);
-        template.querySelector('.card-title').innerText = ob.name;
-        template.querySelector('#abv').innerText = 'ABV' + ' ' + ob.abv + '%';
-        ob.ingredients.malt.forEach(malt => {
-            template.querySelector('.card-text-malt').innerText += `\n ${malt.name} - ${malt.amount.value} Kgs`
-        })
-        ob.ingredients.hops.forEach(hop => {
-            template.querySelector('.card-text-hops').innerText += `\n ${hop.name} \n${hop.amount.value} ${hop.amount.unit} at ${hop.add} of boil`
-        });
-        template.querySelector('.card-text-yeast').innerText = ob.ingredients.yeast
-        document.querySelector('#beer-list').appendChild(template);
-    }
-}
-
-
-axios("https://api.punkapi.com/v2/beers/")
-    .then(response => addObject(response.data));
+axios(
+  "https://api.openbrewerydb.org/v1/breweries/search?query=england&per_page=50"
+)
+  .then((response) => createBreweryCards(response.data))
+  .catch((error) => {
+    console.log(error);
+  });

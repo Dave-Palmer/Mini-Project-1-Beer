@@ -21,28 +21,28 @@
         <img
           width="100px"
           id="beer-image"
-          src="/Images/ingredients.jpeg"
+          src="/Images/brewery_cartoon.jpeg"
           class="card-img-top"
           alt="beer image" />
         <div class="card-body">
           <h5 style="text-align: center" class="card-title"></h5>
-          <h6 id="abv"></h6>
-          <h5>Ingredients:</h5>
-          <h6>Malt</h6>
-          <p class="card-text-malt"></p>
-          <h6>Hops</h6>
-          <p class="card-text-hops"></p>
-          <h6>Yeast</h6>
-          <p class="card-text-yeast"></p>
+          <h6>Brewery Size</h6>
+          <p class="brewery-type"></p>
+          <h6>Address</h6>
+          <p class="card-text-address"></p>
+          <h6>City</h6>
+          <p class="card-text-city"></p>
+          <h6>Website</h6>
+          <a class="card-text-website"></a>
         </div>
       </div>
     </template>
 
-    <title>Recipes</title>
+    <title>Breweries</title>
   </head>
 
-  <body>
-    <main id="recipes-body">
+  <body id="breweries-body">
+    <main>
       <nav id="mynav" class="navbar navbar-dark navbar-expand-lg fixed-top">
         <div class="container-fluid">
           <a class="navbar-brand nav-item" href="#">BREWING BEER</a>
@@ -70,8 +70,8 @@
               <li class="nav-item">
                 <a
                   class="nav-link hover-underline-animation active"
-                  href="/recipes.html"
-                  >Recipes</a
+                  href="/breweries.html"
+                  >Breweries</a
                 >
               </li>
               <li class="nav-item">
@@ -82,8 +82,8 @@
         </div>
       </nav>
 
-      <div class="container">
-        <div id="beer-list" class="row justify-content-center"></div>
+      <div class="container mt-5">
+        <div id="brewery-list" class="row justify-content-center"></div>
       </div>
     </main>
 
